@@ -27,8 +27,8 @@ def process_image(img_location):
 def process_image_for_whiteboard(img_location):
     I2T = Image2Text()
     img = cv2.imread(img_location)
-    cv2.imshow("img",img)
-    cv2.waitKey(1000)
+    # cv2.imshow("img",img)
+    # cv2.waitKey(1000)
     im2 = convert_blackboard_image(img)
     return(I2T.run_for_training_scenario(im2))
 

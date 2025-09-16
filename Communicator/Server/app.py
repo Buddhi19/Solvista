@@ -16,7 +16,7 @@ app = FastAPI()
 # host_url = '192.168.1.5'
 # host_url = '10.30.1.107'
 # host_url = '192.168.8.103'
-host_url = '192.168.8.100'
+host_url = '192.168.43.237'
 
 @app.get("/")
 def read_root():

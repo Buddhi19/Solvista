@@ -150,13 +150,13 @@ class Image2Text:
 	
 def convert_blackboard_image(img):
 	img = cv2.erode(img, np.ones((2,2),np.uint8), iterations = 3)
-	cv2.imshow("img",img)
-	cv2.waitKey(1000)
+	# cv2.imshow("img",img)
+	# cv2.waitKey(1000)
 
 	img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	_, img = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY) # 85 # 155	
-	cv2.imshow("img",img)
-	cv2.waitKey(1000)
+	# cv2.imshow("img",img)
+	# cv2.waitKey(1000)
 
 	kernel = np.ones((7,7),np.uint8)
 
@@ -177,8 +177,8 @@ def convert_blackboard_image(img):
 
 	resized_image = cv2.dilate(resized_image, np.ones((4,4),np.uint8), iterations = 1)
 
-	cv2.imshow("img",im2)
-	cv2.waitKey(1000)
+	# cv2.imshow("img",im2)
+	# cv2.waitKey(1000)
 
 	cv2.imshow("img",resized_image)
 	cv2.waitKey(1000)
@@ -188,8 +188,8 @@ def convert_blackboard_image(img):
 
 def convert_camera_image(img):
 	img = cv2.dilate(img, np.ones((2,2),np.uint8), iterations = 1)
-	cv2.imshow("img",img)
-	cv2.waitKey(1000)
+	# cv2.imshow("img",img)
+	# cv2.waitKey(1000)
 
 	img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -223,11 +223,11 @@ def test1():
 
 def test2():
 	img = cv2.imread(parent_dir+"./test_images/whiteboard.png")
-	cv2.imshow("img",img)
-	cv2.waitKey(1000)
+	# cv2.imshow("img",img)
+	# cv2.waitKey(1000)
 	img2 = convert_blackboard_image(img)
 	I2T = Image2Text()
 	equations = I2T.run_for_training_scenario(img2)
 
 if __name__ == "__main__":
-	test1()
+	test2()
